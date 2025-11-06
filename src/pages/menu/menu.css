@@ -1,0 +1,81 @@
+/* Background matches TablePage theme */
+.menu-page {
+  min-height: 100vh;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+  color: #fff;
+  font-family: 'Poppins', sans-serif;
+  padding: 3rem 1rem;
+}
+
+/* Container */
+.menu-container {
+  text-align: center;
+  max-width: 1000px;
+  width: 100%;
+}
+
+/* Title */
+.menu-title {
+  font-size: 2.2rem;
+  background: linear-gradient(90deg, #00f5ff, #00c6ff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: 2rem;
+  letter-spacing: 1px;
+}
+
+/* Grid Layout */
+.menu-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+}
+
+/* Each menu item card */
+.menu-card {
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 15px;
+  padding: 1.5rem;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+  backdrop-filter: blur(12px);
+  transition: all 0.3s ease;
+}
+
+.menu-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 0 20px rgba(0, 246, 255, 0.4);
+}
+
+/* Menu text */
+.menu-card h2 {
+  font-size: 1.2rem;
+  color: #00f5ff;
+  margin-bottom: 0.5rem;
+}
+
+.menu-desc {
+  font-size: 0.95rem;
+  color: #ccc;
+  margin-bottom: 0.8rem;
+}
+
+.menu-price {
+  font-weight: 600;
+  color: #43e97b;
+  font-size: 1.1rem;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  .menu-title {
+    font-size: 1.8rem;
+  }
+
+  .menu-card {
+    padding: 1.2rem;
+  }
+}
