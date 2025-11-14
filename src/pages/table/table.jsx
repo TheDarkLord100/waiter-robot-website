@@ -8,7 +8,7 @@ export default function TablePage() {
   const [modalOpen, setModalOpen] = useState(false);
 
   const handleCallWaiter = () => {
-    setModalOpen(true);
+    setModalOpen(true);666666
   };
 
   const handleShowMenu = () => {
