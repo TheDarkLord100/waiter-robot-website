@@ -1,5 +1,5 @@
 import React, { useState, useRef } from "react";
-import ROSLIB from "roslib";
+const ROSLIB = window.ROSLIB;
 import "./hol.css";
 
 export default function HolonomicControl() {
