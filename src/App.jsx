@@ -12,6 +12,7 @@ function App() {
     <>
       <Router>
         <Routes>
+          <Route path="/" element={<TablePage />} />
           <Route path="/table/:table_id" element={<TablePage />} />
           <Route path="/menu" element={<MenuPage />} />
           <Route path="/control/" element={<RobotControlPage />} />  

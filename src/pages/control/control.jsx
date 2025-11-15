@@ -4,6 +4,8 @@ import "./control.css";
 
 export default function RobotControlPage() {
   const [ip, setIp] = useState("");
+  const [linear, setLinear] = useState(0);
+  const [angular, setAngular] = useState(0);
   const [connected, setConnected] = useState(false);
   const rosRef = useRef(null);
   const cmdVelRef = useRef(null);
@@ -46,7 +48,7 @@ export default function RobotControlPage() {
 
   return (
     <div className="page">
-      
+
       {/* Connection Bar */}
       <div className="connect-bar">
         <input
@@ -59,19 +61,39 @@ export default function RobotControlPage() {
           {connected ? "Connected ✔" : "Connect"}
         </button>
       </div>
-
+      <div className="connect-bar">
+        <input
+          type="number"
+          placeholder="Linear Velocity"
+          value={linear}
+          onChange={(e) => setLinear(parseFloat(e.target.value))}
+        />
+        <button onClick={null} disabled >
+          V_x
+        </button>
+      </div><div className="connect-bar">
+        <input
+          type="number"
+          placeholder="Angular Velocity"
+          value={angular}
+          onChange={(e) => setAngular(parseFloat(e.target.value))}
+        />
+        <button onClick={null} disabled >
+          W_z
+        </button>
+      </div>
       {/* Teleoperation Grid */}
       <div className="grid-container">
         <div></div>
-        <button disabled={!connected} onClick={() => sendCommand(0, -1.5)}>Front</button>
+        <button disabled={!connected} onClick={() => sendCommand(0, -angular)}>Front</button>
         <div></div>
 
-        <button disabled={!connected} onClick={() => sendCommand(-0.1, 0)}>Anti-Clock</button>
+        <button disabled={!connected} onClick={() => sendCommand(-linear, 0)}>Anti-Clock</button>
         <button disabled={!connected} onClick={() => sendCommand(0, 0)}>⏹</button>
-        <button disabled={!connected} onClick={() => sendCommand(0.1, 0)}>Clock</button>
+        <button disabled={!connected} onClick={() => sendCommand(linear, 0)}>Clock</button>
 
         <div></div>
-        <button disabled={!connected} onClick={() => sendCommand(0, 1.5)}>Back</button>
+        <button disabled={!connected} onClick={() => sendCommand(0, angular)}>Back</button>
         <div></div>
       </div>
 
