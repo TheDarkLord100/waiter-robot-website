@@ -19,7 +19,7 @@ export default function HomePage() {
 
         <button
           className="nav-button"
-          onClick={() => navigate("/differential")}
+          onClick={() => navigate("/control")}
         >
           Differential Control
         </button>
