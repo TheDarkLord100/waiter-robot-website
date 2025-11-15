@@ -1,0 +1,102 @@
+/* Full page layout */
+.page {
+  width: 100%;
+  min-height: 100vh;
+  padding: 20px;
+  box-sizing: border-box;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  background: #e9edf2; /* soft grey background */
+}
+
+/* Top connection bar */
+.connect-bar {
+  width: 100%;
+  max-width: 600px;
+  display: flex;
+  gap: 12px;
+  margin-bottom: 30px;
+}
+
+.connect-bar input {
+  flex: 1;
+  padding: 12px;
+  font-size: 16px;
+  border-radius: 10px;
+  border: 2px solid #b0b8c1;
+  background: #ffffff;
+  color: #3b3f46;
+}
+
+.connect-bar button {
+  padding: 12px 18px;
+  font-size: 16px;
+  border-radius: 10px;
+  border: none;
+  background: #2563eb; /* Blue */
+  color: white;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.connect-bar button:hover {
+  background: #1d4ed8;
+}
+
+.connect-bar button:disabled {
+  background: #999;
+}
+
+/* Teleoperation grid */
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(3, 120px);
+  grid-template-rows: repeat(3, 120px);
+  gap: 18px;
+  justify-content: center;
+  width: 100%;
+}
+
+/* Buttons */
+.grid-container button {
+  font-size: 32px;
+  border-radius: 18px;
+  border: none;
+
+  background: #3b3f46;       /* dark buttons */
+  color: #ffffff;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+
+  cursor: pointer;
+  transition: 0.15s ease;
+}
+
+.grid-container button:hover {
+  background: #4a4f57;
+}
+
+.grid-container button:active {
+  transform: scale(0.95);
+}
+
+.grid-container button:disabled {
+  background: #777;
+  color: #ddd;
+  cursor: not-allowed;
+  box-shadow: none;
+}
+
+/* Mobile scaling */
+@media (max-width: 500px) {
+  .grid-container {
+    grid-template-columns: repeat(3, 90px);
+    grid-template-rows: repeat(3, 90px);
+  }
+
+  .grid-container button {
+    font-size: 24px;
+  }
+}

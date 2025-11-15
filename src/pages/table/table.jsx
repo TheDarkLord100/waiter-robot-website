@@ -7,8 +7,26 @@ export default function TablePage() {
   const navigate = useNavigate();
   const [modalOpen, setModalOpen] = useState(false);
 
-  const handleCallWaiter = () => {
-    setModalOpen(true);666666
+  const handleCallWaiter = async () => {
+    try {
+      const response = await fetch(
+        `https://waiter-robot-server.onrender.com/orders/${table_id}`,
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+        }
+      );
+
+      const data = await response.json();
+      console.log("Order created:", data);
+
+      setModalOpen(true);
+    } catch (error) {
+      console.error("Error creating awaiting order:", error);
+      alert("Failed to call waiter robot. Please try again.");
+    }
   };
 
   const handleShowMenu = () => {
