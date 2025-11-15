@@ -5,6 +5,7 @@ import TablePage from './pages/table/table.jsx';
 import MenuPage from './pages/menu/menu.jsx';
 import RobotControlPage from './pages/control/control.jsx';
 import HolonomicControl from './pages/hol/hol.jsx';
+import HomePage from './pages/home/home.jsx';
 
 function App() {
 
@@ -12,11 +13,11 @@ function App() {
     <>
       <Router>
         <Routes>
-          <Route path="/" element={<TablePage />} />
+          <Route path="/" element={<HomePage />} />
           <Route path="/table/:table_id" element={<TablePage />} />
           <Route path="/menu" element={<MenuPage />} />
-          <Route path="/control/" element={<RobotControlPage />} />  
-          <Route path="/holo_control/" element={<HolonomicControl />} />
+          <Route path="/control" element={<RobotControlPage />} />  
+          <Route path="/holonomic" element={<HolonomicControl />} />
         </Routes>
       </Router>
     </>
